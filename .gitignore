@@ -30,7 +30,6 @@ build/
 !**/src/test/**/build/
 /src/main/resources/application-dev.properties
 /src/main/resources/application-production.properties
-/src/main/resources/schema.sql
-/src/main/resources/data.sql
+
 ### VS Code ###
 .vscode/
