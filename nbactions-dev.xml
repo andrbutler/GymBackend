@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
+                
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath gym.scheduler.schedulerBackend.SchedulerBackendApplication --server.port=9000</exec.args>
+                <exec.executable>java</exec.executable>
+                <Env.JDBC_DATABASE_USERNAME>gym_admin</Env.JDBC_DATABASE_USERNAME>
+                <Env.JDBC_DATABASE_URL>jdbc:mysql://localhost:3306/gym_database</Env.JDBC_DATABASE_URL>
+                <Env.JDBC_DATABASE_PASSWORD>y&amp;UfJQ9y6@sxt2</Env.JDBC_DATABASE_PASSWORD>
+                
+                
+                
+                <Env.JWT_SECRET>yd9P6DGNFkJ3hxtFXwF39S2GhGkpUFmd</Env.JWT_SECRET>
+                
+                
+                
+                
+                
+                
+            </properties>
+        </action>
+        <action>
+            <actionName>debug</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-agentlib:jdwp=transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath gym.scheduler.schedulerBackend.SchedulerBackendApplication --server.port=9000</exec.args>
+                <exec.executable>java</exec.executable>
+                <jpda.listen>true</jpda.listen>
+            </properties>
+        </action>
+        <action>
+            <actionName>profile</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.5.0:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath gym.scheduler.schedulerBackend.SchedulerBackendApplication --server.port=9000</exec.args>
+                <exec.executable>java</exec.executable>
+            </properties>
+        </action>
+        <action>
+            <actionName>build</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>install</goal>
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath gym.scheduler.schedulerBackend.SchedulerBackendApplication --server.port=9000</exec.args>
+                <exec.executable>java</exec.executable>
+                <Env.JDBC_DATABASE_USERNAME>gym_admin</Env.JDBC_DATABASE_USERNAME>
+                <Env.JDBC_DATABASE_URL>jdbc:mysql://localhost:3306/gym_database</Env.JDBC_DATABASE_URL>
+                <Env.JDBC_DATABASE_PASSWORD>y&amp;UfJQ9y6@sxt2</Env.JDBC_DATABASE_PASSWORD>
+                <Env.JWT_SECRET>yd9P6DGNFkJ3hxtFXwF39S2GhGkpUFmd</Env.JWT_SECRET>
+            </properties>
+            <activatedProfiles>
+                <activatedProfile>dev</activatedProfile>
+            </activatedProfiles>
+        </action>
+        <action>
+            <actionName>rebuild</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath gym.scheduler.schedulerBackend.SchedulerBackendApplication</exec.args>
+                <exec.executable>java</exec.executable>
+                <Env.JDBC_DATABASE_USERNAME>gym_admin</Env.JDBC_DATABASE_USERNAME>
+                <Env.JDBC_DATABASE_URL>jdbc:mysql://localhost:3306/gym_database</Env.JDBC_DATABASE_URL>
+                <Env.JDBC_DATABASE_PASSWORD>y&amp;UfJQ9y6@sxt2</Env.JDBC_DATABASE_PASSWORD>
+                
+                
+                
+                <Env.JWT_SECRET>yd9P6DGNFkJ3hxtFXwF39S2GhGkpUFmd</Env.JWT_SECRET>
+            </properties>
+            <activatedProfiles>
+                <activatedProfile>dev</activatedProfile>
+            </activatedProfiles>
+        </action>
+    </actions>

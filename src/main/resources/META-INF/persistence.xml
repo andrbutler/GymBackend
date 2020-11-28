@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="gym.scheduler_schedulerBackend_jar_0.0.1-SNAPSHOTPU" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <class>gym.scheduler.schedulerBackend.model.Mealschedule</class>
+    <class>gym.scheduler.schedulerBackend.model.entity.MealSchedule</class>
+    <class>gym.scheduler.schedulerBackend.model.entity.Address</class>
+    <class>gym.scheduler.schedulerBackend.model.entity.Meal</class>
+    <class>gym.scheduler.schedulerBackend.model.entity.Progress</class>
+    <class>gym.scheduler.schedulerBackend.model.entity.Exercise</class>
+    <class>gym.scheduler.schedulerBackend.model.entity.City</class>
+    <class>gym.scheduler.schedulerBackend.model.entity.Payment</class>
+    <class>gym.scheduler.schedulerBackend.model.entity.User</class>
+    <class>gym.scheduler.schedulerBackend.model.entity.ExerciseSchedule</class>
+    <class>gym.scheduler.schedulerBackend.model.entity.PresetSchedule</class>
+    <class>gym.scheduler.schedulerBackend.model.entity.Preset</class>
+    <class>gym.scheduler.schedulerBackend.payload.City</class>
+    <class>gym.scheduler.schedulerBackend.payload.Address</class>
+    <class>gym.scheduler.schedulerBackend.payload.User</class>
+    <class>gym.scheduler.schedulerBackend.model.exampleEntity.Progress</class>
+    <class>gym.scheduler.schedulerBackend.model.exampleEntity.City</class>
+    <class>gym.scheduler.schedulerBackend.model.exampleEntity.User</class>
+    <class>gym.scheduler.schedulerBackend.model.exampleEntity.Address</class>
+    <class>gym.scheduler.schedulerBackend.model.exampleEntity.Meal</class>
+    <class>gym.scheduler.schedulerBackend.model.exampleEntity.Exercise</class>
+    <class>gym.scheduler.schedulerBackend.model.exampleEntity.Payment</class>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/gym_database"/>
+      <property name="javax.persistence.jdbc.user" value="gym_admin"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value="y&amp;UfJQ9y6@sxt2"/>
+    </properties>
+  </persistence-unit>
+</persistence>
