@@ -15,7 +15,6 @@ public class AddressRequest {
     private String address2;
     private String postCode;
     private int userId;
-    private int cityId;
     private String cityName;
     private String countryName;
     private String stateName;
@@ -60,13 +59,6 @@ public class AddressRequest {
         this.postCode = postCode;
     }
 
-    public int getCityId() {
-        return cityId;
-    }
-
-    public void setCityId(int cityId) {
-        this.cityId = cityId;
-    }
 
     public String getCityName() {
         return cityName;

@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS user(
     status VARCHAR(45) NOT NULL,
     address_id INT,
     enabled TINYINT(4),
-    email VARCHAR(320) UNIQUE,
+    email VARCHAR(200) UNIQUE,
     phone VARCHAR(10),
     height VARCHAR(7),
     join_date DATE NOT NULL,
