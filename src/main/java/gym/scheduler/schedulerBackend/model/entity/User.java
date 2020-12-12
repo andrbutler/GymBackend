@@ -112,6 +112,18 @@ public class User implements Serializable {
         this.fName = fName;
         this.lName = lName;
     }
+    
+    public User(String username, String password, String email, String role, Date joinDate, String status, String fName, String lName, String height, String phone) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+        this.joinDate = joinDate;
+        this.status = status;
+        this.fName = fName;
+        this.lName = lName;
+        this.height = height;
+        this.phone = phone;
+    }
   public String getLName() {
         return lName;
     }
