@@ -36,8 +36,14 @@ public class PresetScheduleController {
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @GetMapping("/all/{id}")
-    public List<PresetSchedule> retrieveAllPresetExerciseSchedules(@PathVariable(name = "id") int id) {
+    public List<PresetSchedule> retrieveAllPresetExerciseSchedulesByPreset(@PathVariable(name = "id") int id) {
         return presetScheduleRepository.findByPresetId(id);
+    }
+    
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @GetMapping("/allschedules")
+    public List<PresetSchedule> retrieveAllPresetExerciseSchedules() {
+        return presetScheduleRepository.findAll();
     }
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
