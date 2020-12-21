@@ -78,4 +78,12 @@ public class PresetController {
 
         return ResponseEntity.created(location).body(new ApiResponse(true, "preset added successfully"));
     }
+    
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PostMapping("/delete/{id}")
+    public void deletePreset(@PathVariable(name = "id") int id) {
+
+        presetRepository.deleteById(id);
+
+    }
 }
