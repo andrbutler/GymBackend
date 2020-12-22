@@ -113,4 +113,12 @@ public class PresetScheduleController {
         presetScheduleRepository.deleteById(id);
 
     }
+    
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PostMapping("/groupDelete")
+    public void groupDelete(@RequestBody int[] request){
+        for (int id : request) {
+           presetScheduleRepository.deleteById(id); 
+        }
+    }
 }

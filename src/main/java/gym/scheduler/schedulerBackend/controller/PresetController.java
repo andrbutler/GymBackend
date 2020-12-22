@@ -82,7 +82,7 @@ public class PresetController {
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping("/delete/{id}")
     public void deletePreset(@PathVariable(name = "id") int id) {
-
+        
         presetRepository.deleteById(id);
 
     }

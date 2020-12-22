@@ -105,4 +105,12 @@ public class MealScheduleController {
         mealScheduleRepository.deleteById(id);
 
     }
+    
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PostMapping("/groupDelete")
+    public void groupDelete(@RequestBody int[] request){
+        for (int id : request) {
+           mealScheduleRepository.deleteById(id); 
+        }
+    }
 }

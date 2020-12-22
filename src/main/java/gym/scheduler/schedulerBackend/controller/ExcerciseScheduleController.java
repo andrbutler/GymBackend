@@ -156,4 +156,11 @@ public class ExcerciseScheduleController {
         exerciseScheduleRepository.deleteById(id);
 
     }
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
+    @PostMapping("/groupDelete")
+    public void groupDelete(@RequestBody int[] request){
+        for (int id : request) {
+           exerciseScheduleRepository.deleteById(id); 
+        }
+    }
 }
