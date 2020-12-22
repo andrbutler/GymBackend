@@ -122,7 +122,7 @@ public class ExcerciseScheduleController {
         }
         URI location = ServletUriComponentsBuilder
                 .fromCurrentContextPath().path("/api/exercise_schedules/{userid}")
-                .buildAndExpand(request[1].getUserId()).toUri();
+                .buildAndExpand(request[0].getUserId()).toUri();
         return ResponseEntity.created(location).body(new ApiResponse(true, "exercise scheduled successfully"));
     }
     

@@ -78,7 +78,7 @@ public class MealScheduleController {
         }
         URI location = ServletUriComponentsBuilder
                 .fromCurrentContextPath().path("/api/exercise_schedules/{mealid}")
-                .buildAndExpand(request[1].getMealId()).toUri();
+                .buildAndExpand(request[0].getMealId()).toUri();
         return ResponseEntity.created(location).body(new ApiResponse(true, "exercise scheduled successfully"));
     }
 
