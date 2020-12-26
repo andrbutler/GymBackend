@@ -55,7 +55,7 @@ public class ProgressController {
         Progress result = progressRepository.save(p);
 
         URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/api/exercise_schedules/{progressid}")
+                .fromCurrentContextPath().path("/api/progress/{progressid}")
                 .buildAndExpand(result.getProgressId()).toUri();
 
         return ResponseEntity.created(location).body(new ApiResponse(true, "progress updated successfully"));

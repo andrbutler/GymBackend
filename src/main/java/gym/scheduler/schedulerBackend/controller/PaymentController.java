@@ -55,7 +55,7 @@ public class PaymentController {
         Payment result = paymentRepository.save(p);
 
         URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/api/exercise_schedules/{paymentid}")
+                .fromCurrentContextPath().path("/api/payments/{paymentid}")
                 .buildAndExpand(result.getPaymentId()).toUri();
 
         return ResponseEntity.created(location).body(new ApiResponse(true, "payment updated successfully"));
@@ -70,7 +70,7 @@ public class PaymentController {
         Payment result = paymentRepository.save(p);
 
         URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/api/exercise_schedules/{paymentid}")
+                .fromCurrentContextPath().path("/api/payments/{paymentid}")
                 .buildAndExpand(result.getPaymentId()).toUri();
 
         return ResponseEntity.created(location).body(new ApiResponse(true, "payment created successfully"));

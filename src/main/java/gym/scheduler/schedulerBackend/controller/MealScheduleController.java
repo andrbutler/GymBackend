@@ -52,7 +52,7 @@ public class MealScheduleController {
         MealSchedule result = mealScheduleRepository.save(m);
 
         URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/api/exercise_schedules/{scheduleid}")
+                .fromCurrentContextPath().path("/api/meal_schedules/{scheduleid}")
                 .buildAndExpand(result.getScheduleId()).toUri();
 
         return ResponseEntity.created(location).body(new ApiResponse(true, "meal schedule updated successfully"));
@@ -77,7 +77,7 @@ public class MealScheduleController {
 
         }
         URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/api/exercise_schedules/{mealid}")
+                .fromCurrentContextPath().path("/api/meals/{mealid}")
                 .buildAndExpand(request[0].getMealId()).toUri();
         return ResponseEntity.created(location).body(new ApiResponse(true, "exercise scheduled successfully"));
     }

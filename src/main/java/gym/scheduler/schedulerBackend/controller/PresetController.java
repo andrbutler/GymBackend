@@ -56,7 +56,7 @@ public class PresetController {
         Preset result = presetRepository.save(p);
 
         URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/api/exercise_schedules/{presetname}")
+                .fromCurrentContextPath().path("/api/presets/{presetname}")
                 .buildAndExpand(result.getPresetName()).toUri();
 
         return ResponseEntity.created(location).body(new ApiResponse(true, "preset updated successfully"));
@@ -73,7 +73,7 @@ public class PresetController {
         Preset result = presetRepository.save(p);
 
         URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/api/exercise_schedules/{presetname}")
+                .fromCurrentContextPath().path("/api/presets/{presetname}")
                 .buildAndExpand(result.getPresetName()).toUri();
 
         return ResponseEntity.created(location).body(new ApiResponse(true, "preset added successfully"));

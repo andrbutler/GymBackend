@@ -85,7 +85,7 @@ public class PresetScheduleController {
 
         }
         URI location = ServletUriComponentsBuilder
-                .fromCurrentContextPath().path("/api/exercise_schedules/{presetid}")
+                .fromCurrentContextPath().path("/api/presets/{presetid}")
                 .buildAndExpand(request[0].getPresetId()).toUri();
         return ResponseEntity.created(location).body(new ApiResponse(true, "exercise scheduled successfully"));
     }
