@@ -94,7 +94,7 @@ public class UserControllerTest {
     @Test
     public void testRetrieveAllUsers() {
         when(userRepository.findAll()).thenReturn(userList);
-        System.out.println("retrieveAllUsers");
+        System.out.println("testing retrieveAllUsers");
         List<User> expResult = userList;
         List<User> result = userController.retrieveAllUsers();
         assertEquals(expResult, result);
@@ -104,7 +104,7 @@ public class UserControllerTest {
     public void testRetrieveAllUsersLength() {
         when(userRepository.findAll()).thenReturn(userList);
 
-        System.out.println("retrieveAllUsers");
+        System.out.println("testing retrieveAllUsers");
         int expResult = userList.size();
         int result = 3;
         assertEquals(expResult, result);
@@ -115,7 +115,7 @@ public class UserControllerTest {
     @Test
     public void testRetrieveUserById() {
         when(userRepository.findByUserId(2)).thenReturn(userList.get(1));
-        System.out.println("retrieve User With Id 2");
+        System.out.println("testing retrieve User With Id 2");
         User expResult = userList.get(1);
         User result = userController.retrieveById(2);
         assertEquals(expResult, result);
@@ -129,7 +129,7 @@ public class UserControllerTest {
         when(userRepository.findByUserId(2)).thenReturn(userList.get(1));
         when(userRepository.findByUsername("username")).thenReturn(Optional.of(userList.get(1)));
         when(userRepository.save(Mockito.any(User.class))).thenReturn(userList.get(1));
-        System.out.println("Attempt to update User with username: user2 to username, when username already exists");
+        System.out.println("testing Attempt to update User with username: user2 to username, when username already exists");
         System.out.println();
         ResponseEntity expResult = new ResponseEntity(new ApiResponse(false, "Username is already taken!"),
                 HttpStatus.BAD_REQUEST);
