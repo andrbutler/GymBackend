@@ -8,7 +8,6 @@ package gym.scheduler.schedulerBackend.controller;
 import gym.scheduler.schedulerBackend.model.entity.User;
 import gym.scheduler.schedulerBackend.model.repository.UserRepository;
 import gym.scheduler.schedulerBackend.payload.ApiResponse;
-import gym.scheduler.schedulerBackend.security.UserPrincipal;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -26,16 +25,11 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import static org.mockito.Mockito.when;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.test.context.support.WithMockUser;
-import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
@@ -48,7 +42,6 @@ import org.springframework.web.context.WebApplicationContext;
 @WithMockUser(username = "admin", roles = {"ADMIN"})
 public class UserControllerTest {
 
-    private MockMvc mvc;
     @Autowired
     WebApplicationContext webApplicationContext;
 
@@ -65,7 +58,6 @@ public class UserControllerTest {
 
     @BeforeAll
     protected void setUpClass() {
-        mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
     @AfterAll
