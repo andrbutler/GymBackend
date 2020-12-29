@@ -119,4 +119,33 @@
                 <activatedProfile>dev</activatedProfile>
             </activatedProfiles>
         </action>
+        <action>
+            <actionName>test.single</actionName>
+            <packagings>
+                <packaging>*</packaging>
+            </packagings>
+            <goals>
+                <goal>test-compile</goal>
+                <goal>surefire:test</goal>
+            </goals>
+            <properties>
+                <test>${packageClassName}</test>
+                <exec.executable>java</exec.executable>
+                <Env.JDBC_DATABASE_USERNAME>gym_admin</Env.JDBC_DATABASE_USERNAME>
+                <Env.JDBC_DATABASE_URL>jdbc:mysql://localhost:3306/gym_database</Env.JDBC_DATABASE_URL>
+                <Env.JDBC_DATABASE_PASSWORD>y&amp;UfJQ9y6@sxt2</Env.JDBC_DATABASE_PASSWORD>
+                <Env.JWT_SECRET>yd9P6DGNFkJ3hxtFXwF39S2GhGkpUFmd</Env.JWT_SECRET>
+                <Env.PORT>9000</Env.PORT>
+                <Env.DATASOURCE_INIT_MODE>never</Env.DATASOURCE_INIT_MODE>
+                
+                
+                
+                
+                
+                
+                
+                
+                
+            </properties>
+        </action>
     </actions>
