@@ -97,7 +97,7 @@ public class UserControllerTest {
         when(userRepository.findAll()).thenReturn(userList);
 
         System.out.println("testing retrieveAllUsers");
-        int expResult = userList.size();
+        int expResult = userController.retrieveAllUsers().size();
         int result = 3;
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
